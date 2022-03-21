@@ -1,10 +1,10 @@
 import React from "react";
 
-function Player() {
+function Player(props) {
   return (
     <article className="Player">
       <h1>
-        John <span>Secret</span> Doe
+        {props.firstName} <span>{props.gamerTag}</span> {props.lastName}
       </h1>
       {/* To be shown when there is no wins */}
       <h2 className="zero">Currently with no wins :(</h2>

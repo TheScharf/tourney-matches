@@ -8,10 +8,21 @@ function PlayerList(props) {
   const playerDataArray = preparePlayerData(playerData);
   const parsedPlayerData = addWinsToPlayers(playerDataArray, matchData);
 
+  const players = props.playerData.map((player) => {
+    return (
+      <Player
+      key={player.gamerTag}
+      gamerTag={player.gamerTag}
+      firstName={player.firstName}
+      lastName={player.lastName}
+      wins={player.wins}
+      />)
+  });
+
   return (
     <section className="PlayerList">
       <h1>Current participating players</h1>
-      <Player />
+      {players}
     </section>
   );
 }
